@@ -67,7 +67,8 @@
         .a-intro,
         .a-services,
         .a-education,
-        .a-experience {
+        .a-experience,
+        .a-footer {
 
             position: relative;
             scroll-behavior: smooth;
@@ -75,53 +76,55 @@
             width: 100%;
 
         }
-        .a-intro{
+
+        .a-intro {
             padding-top: 1rem;
         }
 
         .a-services {
-            margin: 2rem 0 10rem 0;
+            margin: 10rem 0 12rem 0;
         }
 
         .a-experience {
-            margin-top: 10rem;
+            margin-top: 14rem;
         }
 
         .top-left {
-            top: 0;
-            left: 0;
+            top: -60px;
+            left: -120px;
         }
 
         .top-left-2 {
 
             top: 0;
-            left: -100px;
+            left: -120px;
             text-align: right;
         }
 
         .top-right {
             top: 0;
-            right: -100px
+            right: -50px
         }
 
         .top-right-2 {
-            top: 0;
-            right: -300px
+            top: 40px;
+            right: -330px
         }
 
         .raul {
             font-family: "NeueMontreal Bold";
-            font-size: 280px;
+            font-size: 350px;
+            line-height: 262px;
             font-weight: 700;
             position: absolute;
             z-index: -1;
 
             margin: 0;
-            line-height: 210px;
+
             pointer-events: none;
 
             /* Gradient initial color */
-            background: linear-gradient(180deg, #e4e4e4, rgba(234, 232, 232, 0.1));
+            background: linear-gradient(180deg, rgb(228, 228, 228, 0.7), rgba(234, 232, 232, 0.1));
             -webkit-background-clip: text;
             color: transparent;
         }
@@ -142,6 +145,7 @@
 
         .e-top-right {
             position: absolute;
+            opacity: 0.8;
             top: 0;
             right: 0;
         }
@@ -156,8 +160,8 @@
 
         .intro-box {
             width: 80%;
-            max-width: 600px;
-            background-color: #f2f2f2;
+            max-width: 800px;
+            background: linear-gradient(180deg, white, rgba(185, 185, 185, 0.5));
 
             border: 2px solid #ffffff;
             text-align: center;
@@ -165,11 +169,18 @@
             padding: 1.5rem 2rem;
         }
 
+        .intro-box h1 {
+            font-size: 68px;
+            font-weight: 600;
+            line-height: 78px;
+            margin: 1rem 0;
+        }
+
         .profile-vector {
             width: 90%;
-            max-width: 500px;
+            max-width: 620px;
             margin-bottom: -1rem;
-            margin-top: 4rem;
+            margin-top: 10%;
             margin-right: 4rem;
         }
 
@@ -189,7 +200,7 @@
             justify-content: center;
             padding: 0.8rem 1.5rem;
             border: none;
-            border-radius: 8px;
+            border-radius: 12px;
             cursor: pointer;
             font-size: 18px;
             font-weight: 500;
@@ -222,15 +233,16 @@
             max-width: 600px;
 
             font-size: 64px;
+            line-height: 58px;
 
             font-weight: 500;
-            margin: 6rem 0 3rem 5rem;
+            margin: 5rem 0 6rem 5rem;
         }
 
         .s-boxes {
             display: flex;
             flex-direction: row;
-            gap: 3rem;
+            gap: 2rem;
             justify-content: center;
             width: 100%;
             margin: 0 auto;
@@ -239,17 +251,17 @@
         .s-box {
             cursor: pointer;
             position: relative;
-            background: linear-gradient(135deg, white, white, rgb(240, 240, 240, 0.7));
-            border: 2px solid #f1f1f1;
-            border-radius: 22px;
+            background: linear-gradient(45deg, rgb(255, 255, 255, 0.8), rgb(240, 240, 240, 0.7));
+
+            border-radius: 48px;
             padding: 1.5rem;
-            width: 20%;
-            max-width: 330px;
+            width: 90%;
+            max-width: 400px;
             display: flex;
             flex-direction: column;
             gap: 1rem;
-            box-shadow: inset 16px 2px 12px rgba(0, 0, 0, 0.05),
-                inset -1px 1px 3px rgba(0, 0, 0, 0.01);
+            box-shadow: inset 16px 2px 12px rgba(0, 0, 0, 0.03),
+                inset -1px 1px 3px rgba(0, 0, 0, 0.005);
             transition: border 0.4s ease, box-shadow 0.4s ease;
         }
 
@@ -260,8 +272,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(135deg, rgba(40, 40, 40, 0.6), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.9));
-            border-radius: 20px;
+            background: linear-gradient(135deg, rgba(24, 24, 24, 0.8), rgba(0, 0, 0, 0.9));
+            border-radius: 48px;
             opacity: 0;
             transition: opacity 0.4s ease;
             pointer-events: none;
@@ -273,7 +285,7 @@
         }
 
         .s-box:hover {
-            border: 2px solid rgba(193, 193, 193, 0.8);
+
             box-shadow: inset 16px 2px 20px rgba(0, 0, 0, 0.4),
                 inset -1px 1px 6px rgba(255, 255, 255, 0.1);
         }
@@ -293,9 +305,10 @@
 
         .s-box h3 {
             font-size: 38px;
-            line-height: 46px;
+            line-height: 48px;
             font-weight: 500;
-            margin-top: 50%;
+            margin-top: 55%;
+            margin-left: 1rem;
             margin-bottom: 0.5rem;
             transition: all 0.4s ease;
 
@@ -303,9 +316,10 @@
 
         .s-box p {
             font-size: 20px;
-            margin: 0 0 1rem 0;
-            transition: all 0.4s ease;
             line-height: 28px;
+            margin: 0 3rem 1.5rem 1rem;
+            transition: all 0.4s ease;
+
         }
 
         .icon-box {
@@ -313,10 +327,10 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 15px;
-            background: rgba(222, 220, 220, 0.8);
+            padding: 25px;
+            background: linear-gradient(90deg, white, rgb(225, 224, 224, 0.6));
             border: 2px solid rgb(255, 255, 255);
-            border-radius: 10px;
+            border-radius: 32px;
             width: fit-content;
             text-align: center;
             backdrop-filter: blur(10px);
@@ -341,8 +355,8 @@
         }
 
         .icon-box svg {
-            width: 30px;
-            height: 30px;
+            width: 48px;
+            height: 48px;
 
 
             cursor: pointer;
@@ -387,22 +401,22 @@
         .edu-icon {
             height: fit-content;
             width: fit-content;
-            background: linear-gradient(90deg, white, rgb(225, 224, 224, 0.6));
+            background: linear-gradient(90deg, white, rgb(225, 224, 224, 0.4));
             border: 2px solid rgb(255, 255, 255);
-            border-radius: 10px;
+            border-radius: 22px;
             width: fit-content;
             text-align: center;
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            padding: 17px 20px;
+            padding: 25px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
         .edu-icon svg {
-            width: 30px;
-            height: 30px;
+            width: 48px;
+            height: 48px;
         }
 
         .edu-box {
@@ -442,8 +456,8 @@
 
         .edu-text h3 {
             font-weight: 400;
-            font-size: 34px;
-            line-height: 44px;
+            font-size: 38px;
+            line-height: 48px;
             letter-spacing: -2%;
             margin-bottom: 0;
         }
@@ -512,8 +526,8 @@
 
         .ex-box h3 {
             font-weight: 500;
-            font-size: 34px;
-            line-height: 44px;
+            font-size: 38px;
+            line-height: 48px;
             text-align: right;
             margin: 0;
         }
@@ -543,7 +557,7 @@
         }
 
         .f-text {
-            width: 55%;
+            width: 65%;
         }
 
         .f-text h1 {
@@ -551,9 +565,9 @@
             color: black;
             font-weight: 700;
 
-            font-size: 145px;
+            font-size: 150px;
 
-            line-height: 125px;
+            line-height: 140px;
             letter-spacing: -3%;
             text-transform: uppercase;
             margin: 0;
@@ -573,7 +587,7 @@
 
             font-weight: 400;
             font-style: Regular;
-            font-size: 30px;
+            font-size: 38px;
 
             line-height: 48px;
             letter-spacing: -2%;
@@ -590,8 +604,8 @@
         }
 
         .sc-links a svg {
-            height: 60px;
-            width: 60px;
+            height: 78px;
+            width: 78px;
         }
 
         .f-links {
@@ -606,6 +620,14 @@
             text-decoration: none;
             color: black;
             font-size: 16px;
+        }
+
+        .e-right-down {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: -1;
+
         }
     </style>
 </head>
@@ -641,8 +663,8 @@
         </div>
 
         <div class="a-services">
-            <h1 class="top-right raul">SER<br>VICE</h1>
-            <h1 class="top-right raul duplicate" aria-hidden="true">SER<br>VICE</h1>
+            <h1 class="top-right raul">SER<br>CES</h1>
+            <h1 class="top-right raul duplicate" aria-hidden="true">SER<br>CES</h1>
             <div class="a-service">
                 <h2>Providing the solutions that drive real-world impact.</h2>
                 <div class="s-boxes">
@@ -1084,6 +1106,21 @@
                     <a href="#">© 2025 Raul Malik. All Rights Reserved.</a>
                 </div>
             </div>
+            <svg class="e-right-down" width="1086" height="845" viewBox="0 0 1086 845" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <g filter="url(#filter0_f_4299_233)">
+                    <circle cx="1169.5" cy="1169.5" r="819.5" fill="white" />
+                </g>
+                <defs>
+                    <filter id="filter0_f_4299_233" x="0" y="0" width="2339" height="2339" filterUnits="userSpaceOnUse"
+                        color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                        <feGaussianBlur stdDeviation="175" result="effect1_foregroundBlur_4299_233" />
+                    </filter>
+                </defs>
+            </svg>
+
         </div>
     </section>
 
