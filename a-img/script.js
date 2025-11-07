@@ -27,21 +27,40 @@ scroll();
 // Add the scroll event listener
 window.addEventListener('scroll', scroll);
 
+
 window.addEventListener("DOMContentLoaded", () => {
-    const xTo = gsap.quickTo('.raul.duplicate', '--xpercent', {
-        duration: 0.4,
-        ease: "back"
-    });
+    // Get all the .raul.duplicate elements
+    const elements = document.querySelectorAll('.raul.duplicate');
 
-    const yTo = gsap.quickTo('.raul.duplicate', '--ypercent', {
-        duration: 0.4,
-        ease: "back"
-    });
+    elements.forEach(el => {
+        const xTo = gsap.quickTo(el, '--xpercent', {
+            duration: 0.4,
+            ease: "back.out(1.7)"
+        });
 
-    document.addEventListener("mousemove", (e) => {
-        const mX = gsap.utils.mapRange(0, window.innerWidth, 0, 100, e.clientX);
-        xTo(mX);
-        const mY = gsap.utils.mapRange(0, window.innerHeight, 0, 100, e.clientY);
-        yTo(mY);
+        const yTo = gsap.quickTo(el, '--ypercent', {
+            duration: 0.4,
+            ease: "back.out(1.7)"
+        });
+
+        // Listen for mousemove on the whole document
+        document.addEventListener("mousemove", (e) => {
+            const rect = el.getBoundingClientRect();
+
+            // Check if mouse is over the element
+            if (
+                e.clientX >= rect.left &&
+                e.clientX <= rect.right &&
+                e.clientY >= rect.top &&
+                e.clientY <= rect.bottom
+            ) {
+                // Map position relative to this element
+                const relX = ((e.clientX - rect.left) / rect.width) * 100;
+                const relY = ((e.clientY - rect.top) / rect.height) * 100;
+
+                xTo(relX);
+                yTo(relY);
+            }
+        });
     });
 });

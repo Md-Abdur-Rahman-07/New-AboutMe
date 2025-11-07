@@ -112,9 +112,7 @@
         font-weight: 700;
         position: absolute;
         z-index: -1;
-
         margin: 0;
-
         pointer-events: none;
 
         /* Gradient initial color */
@@ -153,14 +151,18 @@
     }
 
     .intro-box {
+        margin-bottom: 2rem;
         width: 80%;
-        max-width: 800px;
-        background: linear-gradient(180deg, white, rgba(185, 185, 185, 0.5));
-
-        border: 2px solid #ffffff;
+        max-width: 800px;     
         text-align: center;
         border-radius: 22px;
         padding: 1.5rem 2rem;
+
+        background: linear-gradient(135deg, rgba(222, 220, 220, 0.15), rgba(204, 204, 204, 0.3));
+        border: 3px solid #ffffff;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
     }
 
     .intro-box h1 {
@@ -173,7 +175,7 @@
     .profile-vector {
         width: 90%;
         max-width: 620px;
-        margin-bottom: -1rem;
+        margin-bottom: -1.15rem;
         margin-top: 10%;
         margin-right: 4rem;
     }
@@ -239,14 +241,12 @@
         gap: 2rem;
         justify-content: center;
         width: 100%;
-        margin: 0 auto;
+        margin: 0 auto 2rem 0;
     }
 
     .s-box {
         cursor: pointer;
-        position: relative;
-        background: linear-gradient(45deg, rgb(255, 255, 255, 0.8), rgb(240, 240, 240, 0.7));
-
+        position: relative;  
         border-radius: 48px;
         padding: 1.5rem;
         width: 90%;
@@ -254,10 +254,24 @@
         display: flex;
         flex-direction: column;
         gap: 1rem;
+
+            /* background: linear-gradient(45deg, rgb(255, 255, 255, 0.8), rgb(240, 240, 240, 0.7));
         box-shadow: inset 16px 2px 12px rgba(0, 0, 0, 0.03),
             inset -1px 1px 3px rgba(0, 0, 0, 0.005);
-        transition: border 0.4s ease, box-shadow 0.4s ease;
+         transition: border 0.4s ease, box-shadow 0.4s ease;  */
+
+       
+         background: linear-gradient(135deg, rgba(222, 220, 220, 0.15), rgba(204, 204, 204, 0.3));
+        border: 3px solid #ffffff;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+
+        transition: all 0.4s ease;
     }
+    /* .s-box:hover{
+         background: linear-gradient(180deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 1));
+    } */
 
     .s-box::before {
         content: '';
@@ -266,23 +280,28 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: linear-gradient(135deg, rgba(24, 24, 24, 0.8), rgba(0, 0, 0, 0.9));
+         pointer-events: none;
+        z-index: 0;     
         border-radius: 48px;
         opacity: 0;
-        transition: opacity 0.4s ease;
-        pointer-events: none;
-        z-index: 0;
+
+   transition: all 0.4s ease;
+         background: linear-gradient(180deg, rgba(0, 0, 0,0.65), rgba(0, 0, 0,0.95));
+        backdrop-filter: blur(100px);
+        -webkit-backdrop-filter: blur(10px);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+       
     }
 
     .s-box:hover::before {
         opacity: 1;
     }
 
-    .s-box:hover {
+    /* .s-box:hover {
 
         box-shadow: inset 16px 2px 20px rgba(0, 0, 0, 0.4),
             inset -1px 1px 6px rgba(255, 255, 255, 0.1);
-    }
+    } */
 
     .s-box>* {
         position: relative;
@@ -395,7 +414,8 @@
     .edu-icon {
         height: fit-content;
         width: fit-content;
-        background: linear-gradient(90deg, white, rgb(225, 224, 224, 0.4));
+        background: linear-gradient(90deg, rgb(255, 255, 255,0.8), rgb(225, 224, 224, 0.4));
+        
         border: 2px solid rgb(255, 255, 255);
         border-radius: 22px;
         width: fit-content;
@@ -428,7 +448,7 @@
     .edu-box-3 {
         align-items: end;
         justify-content: flex-end;
-
+margin-bottom: 2rem;
     }
 
     .edu-box-2 {
@@ -761,10 +781,12 @@
             margin-top: 20%;
             margin-right: 0;
         }
-.a-service {
- 
-    margin: 3rem auto;
-}
+
+        .a-service {
+
+            margin: 3rem auto;
+        }
+
         .a-service h2 {
             font-size: 50px;
             line-height: 58px;
@@ -811,12 +833,13 @@
             left: -92px;
             text-align: right;
         }
-        .a-exp {
-   
-    margin: 5rem auto;
-}
 
-    
+        .a-exp {
+
+            margin: 5rem auto;
+        }
+
+
 
         .f-text h1 {
             font-size: 95px;
