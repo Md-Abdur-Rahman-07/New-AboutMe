@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testing SVG Dashed Scroll</title>
+  <style>
+    .container {
+      width: 90%;
+      margin: auto;
+      height: 2000px;
+      background: rgba(255, 192, 203, 0.6);
+      position: relative;
+    }
+
+    svg.squiggle {
+      width: 100%;
+      height: 100%;
+      display: block;
+      /* Ensures SVG scales to container height */
+    }
+
+    #visible-path {
+      stroke: black;
+      stroke-width: 3;
+      fill: none;
+      stroke-dasharray: 10 10;
+    }
+
+    #mask-path {
+      stroke: white;
+      stroke-width: 5;
+      fill: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <svg class="squiggle" viewBox="0 0 1539 4999" preserveAspectRatio="xMidYMid meet"
+      xmlns="http://www.w3.org/2000/svg">
+
+      <defs>
+        <mask id="grow-mask">
+          <path id="mask-path"
+            d="M754.969 0.0898767C719.092 596.09 721.092 275.813 721.092 959.791C721.092 1318.42 960.388 1424.2 1182.73 1472.67C1527.97 1547.94 1471.47 1833.09 1471.47 1833.09C1348.47 2454.59 105.469 1982.09 10.4695 2615.59C-84.5305 3249.09 598.97 3237.51 932.969 3249.09C1266.97 3260.66 1646.97 3496.09 1506.97 3951.59C1382.97 4260.09 978.969 4296.59 827.969 4408.09C676.969 4519.59 718.969 4675.59 718.969 4998.59" />
+        </mask>
+      </defs>
+
+      <path id="visible-path" mask="url(#grow-mask)"
+        d="M754.969 0.0898767C719.092 596.09 721.092 275.813 721.092 959.791C721.092 1318.42 960.388 1424.2 1182.73 1472.67C1527.97 1547.94 1471.47 1833.09 1471.47 1833.09C1348.47 2454.59 105.469 1982.09 10.4695 2615.59C-84.5305 3249.09 598.97 3237.51 932.969 3249.09C1266.97 3260.66 1646.97 3496.09 1506.97 3951.59C1382.97 4260.09 978.969 4296.59 827.969 4408.09C676.969 4519.59 718.969 4675.59 718.969 4998.59" />
+    </svg>
+  </div>
+
+  <script>
+    const svg = document.querySelector('svg.squiggle');
+    const path = svg.querySelector('#mask-path');
+    const pathLength = path.getTotalLength();
+
+    path.style.strokeDasharray = `${pathLength}`;
+    path.style.strokeDashoffset = `${pathLength}`;
+
+    const scroll = () => {
+      const distance = window.scrollY;
+      const totalDistance = document.body.scrollHeight - window.innerHeight;
+      const percentage = totalDistance > 0 ? (distance / totalDistance) : 0;
+      path.style.strokeDashoffset = `${pathLength * (1 - percentage)}`;
+    };
+
+    scroll();
+    window.addEventListener('scroll', scroll);
+  </script>
+</body>
+</html>
