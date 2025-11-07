@@ -813,7 +813,7 @@ margin-bottom: 2rem;
             border-radius: 20px;
         }
 
-        .s-box {
+        .s-box,.s-box::before{
             border-radius: 25px;
         }
 
@@ -866,6 +866,11 @@ margin-bottom: 2rem;
     }
 
     @media (max-width: 580px) {
+        .profile-vector {
+
+    margin-bottom: -0.9rem;
+
+}
         .top-left-2 {
 
             left: -141px;
