@@ -14,17 +14,15 @@
     }
 
 
-
     .about-section {
         position: relative;
         z-index: 999;
 
         scroll-behavior: smooth;
         scrollbar-width: none;
-        overflow-x: hidden;
         width: 100%;
         height: 100%;
-        background-image: url('./a-img/dot.png');
+        background-image: url('../a-img/dot.png');
         font-family: "NeueMontreal Regular", sans-serif;
     }
 
@@ -60,7 +58,7 @@
     .a-education,
     .a-experience,
     .a-footer {
-
+        overflow: hidden;
         position: relative;
         scroll-behavior: smooth;
         z-index: 999;
@@ -430,7 +428,7 @@
     .edu-box-3 {
         align-items: end;
         justify-content: flex-end;
-     
+
     }
 
     .edu-box-2 {
@@ -653,6 +651,7 @@
     }
 
     @media (max-width: 992px) {
+
         .raul {
             font-size: 250px;
             line-height: 186px;
@@ -675,14 +674,16 @@
             gap: 2rem;
             align-items: center;
         }
-.a-education {
-    margin-bottom: 5rem;
-}
+
+        .a-education {
+            margin-bottom: 0;
+        }
+
         .a-edu {
 
             flex-direction: column;
             width: 90%;
-            margin: 0 auto;
+            margin: 5rem auto 0 auto;
             align-items: center;
             gap: 5rem;
         }
@@ -706,9 +707,9 @@
             width: 100%;
         }
 
-       .a-experience {
-    margin: 0 0 5rem 0;
-}
+        .a-experience {
+            margin: 0 0 5rem 0;
+        }
 
         .ex-boxes {
             width: 100%;
@@ -760,7 +761,10 @@
             margin-top: 20%;
             margin-right: 0;
         }
-
+.a-service {
+ 
+    margin: 3rem auto;
+}
         .a-service h2 {
             font-size: 50px;
             line-height: 58px;
@@ -768,7 +772,7 @@
         }
 
         .a-services {
-            margin: 5rem 0 7rem 0;
+            margin: 5rem 0 2rem 0;
         }
 
         .edu-text h3,
@@ -798,21 +802,21 @@
         }
 
         .top-right-2 {
-            top: -65px;
+            top: 0;
             right: -202px;
         }
 
         .top-left-2 {
-            top: -112px;
+            top: 0;
             left: -92px;
             text-align: right;
         }
+        .a-exp {
+   
+    margin: 5rem auto;
+}
 
-        .top-left-2 {
-            top: -112px;
-            left: -92px;
-
-        }
+    
 
         .f-text h1 {
             font-size: 95px;
@@ -888,7 +892,7 @@
         }
 
         .top-right {
-            top: -30px;
+            top: 0;
             right: -20px;
         }
 
