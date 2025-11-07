@@ -72,7 +72,7 @@
     }
 
     .a-services {
-        margin: 10rem 0 25rem 0;
+        margin: 10rem 0 15rem 0;
     }
 
     .a-education {
@@ -437,11 +437,11 @@
 
     .edu-box-1 {
         justify-content: flex-start;
-        margin: -5rem 0 5rem 0;
+        margin: 0 0 5rem 0;
     }
 
     .edu-box-1 .edu-text h3 {
-        margin-top: 2rem;
+        margin-top: 5rem;
     }
 
     .edu-box-2 .edu-text h3 {
