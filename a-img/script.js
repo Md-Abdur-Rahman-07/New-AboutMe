@@ -29,37 +29,39 @@ window.addEventListener('scroll', scroll);
 
 
 window.addEventListener("DOMContentLoaded", () => {
-    // Get all the .raul.duplicate elements
     const elements = document.querySelectorAll('.raul.duplicate');
 
     elements.forEach(el => {
-        const xTo = gsap.quickTo(el, '--xpercent', {
-            duration: 0.4,
-            ease: "back.out(1.7)"
-        });
+        const xTo = gsap.quickTo(el, '--xpercent', { duration: 0.4, ease: "back.out(1.7)" });
+        const yTo = gsap.quickTo(el, '--ypercent', { duration: 0.4, ease: "back.out(1.7)" });
 
-        const yTo = gsap.quickTo(el, '--ypercent', {
-            duration: 0.4,
-            ease: "back.out(1.7)"
-        });
+        let isHovering = false;
+        let fadeTimeout;
 
-        // Listen for mousemove on the whole document
         document.addEventListener("mousemove", (e) => {
             const rect = el.getBoundingClientRect();
+            const isOver = (
+                e.clientX >= rect.left - 50 && // small hover zone padding
+                e.clientX <= rect.right + 50 &&
+                e.clientY >= rect.top - 50 &&
+                e.clientY <= rect.bottom + 50
+            );
 
-            // Check if mouse is over the element
-            if (
-                e.clientX >= rect.left &&
-                e.clientX <= rect.right &&
-                e.clientY >= rect.top &&
-                e.clientY <= rect.bottom
-            ) {
-                // Map position relative to this element
+            if (isOver) {
+                if (!isHovering) {
+                    isHovering = true;
+                    clearTimeout(fadeTimeout);
+                    el.style.opacity = 1;
+                }
                 const relX = ((e.clientX - rect.left) / rect.width) * 100;
                 const relY = ((e.clientY - rect.top) / rect.height) * 100;
-
                 xTo(relX);
                 yTo(relY);
+            } else if (isHovering) {
+                isHovering = false;
+                fadeTimeout = setTimeout(() => {
+                    el.style.opacity = 0;
+                }, 150); // delay fade-out a bit for smoother feel
             }
         });
     });

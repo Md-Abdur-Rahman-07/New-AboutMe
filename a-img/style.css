@@ -21,7 +21,7 @@
         scroll-behavior: smooth;
         scrollbar-width: none;
         width: 100%;
-        height: 100%;
+        
         background-image: url('../a-img/dot.png');
         font-family: "NeueMontreal Regular", sans-serif;
     }
@@ -39,6 +39,10 @@
     }
 
     .nav {
+        position: sticky;
+        top: 10px;
+        z-index: 100;
+
         padding: 1rem 5rem;
         border: 2px solid white;
         display: flex;
@@ -61,7 +65,7 @@
         overflow: hidden;
         position: relative;
         scroll-behavior: smooth;
-        z-index: 999;
+        z-index: 99;
         width: 100%;
 
 
@@ -69,6 +73,7 @@
 
     .a-intro {
         padding-top: 1rem;
+        top: -60px;
     }
 
     .a-services {
@@ -114,25 +119,24 @@
         z-index: -1;
         margin: 0;
         pointer-events: none;
-
-        /* Gradient initial color */
-        background: linear-gradient(180deg, rgb(228, 228, 228, 0.7), rgba(234, 232, 232, 0.1));
+        background: linear-gradient(180deg, rgba(228, 228, 228, 0.7), rgba(234, 232, 232, 0.1));
         -webkit-background-clip: text;
         color: transparent;
     }
 
-    /* Duplicate layer reveal color */
     .raul.duplicate {
         background: none;
         color: #929292;
-    }
-
-    .raul.duplicate {
         --xpercent: 50%;
         --ypercent: 50%;
         mask-image: radial-gradient(circle at var(--xpercent) var(--ypercent),
-                rgb(0, 0, 0, 0.6) 25%, transparent 30%);
+                rgba(0, 0, 0, 0.6) 25%, transparent 30%);
+        mask-repeat: no-repeat;
+        opacity: 0;
+        /* Hidden by default */
+        transition: opacity 0.4s ease-out;
     }
+
 
 
     .e-top-right {
@@ -153,7 +157,7 @@
     .intro-box {
         margin-bottom: 2rem;
         width: 80%;
-        max-width: 800px;     
+        max-width: 800px;
         text-align: center;
         border-radius: 22px;
         padding: 1.5rem 2rem;
@@ -246,7 +250,7 @@
 
     .s-box {
         cursor: pointer;
-        position: relative;  
+        position: relative;
         border-radius: 48px;
         padding: 1.5rem;
         width: 90%;
@@ -255,13 +259,13 @@
         flex-direction: column;
         gap: 1rem;
 
-            /* background: linear-gradient(45deg, rgb(255, 255, 255, 0.8), rgb(240, 240, 240, 0.7));
+        /* background: linear-gradient(45deg, rgb(255, 255, 255, 0.8), rgb(240, 240, 240, 0.7));
         box-shadow: inset 16px 2px 12px rgba(0, 0, 0, 0.03),
             inset -1px 1px 3px rgba(0, 0, 0, 0.005);
          transition: border 0.4s ease, box-shadow 0.4s ease;  */
 
-       
-         background: linear-gradient(135deg, rgba(222, 220, 220, 0.15), rgba(204, 204, 204, 0.3));
+
+        background: linear-gradient(135deg, rgba(222, 220, 220, 0.15), rgba(204, 204, 204, 0.3));
         border: 3px solid #ffffff;
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
@@ -269,6 +273,7 @@
 
         transition: all 0.4s ease;
     }
+
     /* .s-box:hover{
          background: linear-gradient(180deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 1));
     } */
@@ -280,17 +285,17 @@
         left: 0;
         right: 0;
         bottom: 0;
-         pointer-events: none;
-        z-index: 0;     
+        pointer-events: none;
+        z-index: 0;
         border-radius: 48px;
         opacity: 0;
 
-   transition: all 0.4s ease;
-         background: linear-gradient(180deg, rgba(0, 0, 0,0.65), rgba(0, 0, 0,0.95));
+        transition: all 0.4s ease;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.95));
         backdrop-filter: blur(100px);
         -webkit-backdrop-filter: blur(10px);
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-       
+
     }
 
     .s-box:hover::before {
@@ -414,8 +419,8 @@
     .edu-icon {
         height: fit-content;
         width: fit-content;
-        background: linear-gradient(90deg, rgb(255, 255, 255,0.8), rgb(225, 224, 224, 0.4));
-        
+        background: linear-gradient(90deg, rgb(255, 255, 255, 0.8), rgb(225, 224, 224, 0.4));
+
         border: 2px solid rgb(255, 255, 255);
         border-radius: 22px;
         width: fit-content;
@@ -448,7 +453,7 @@
     .edu-box-3 {
         align-items: end;
         justify-content: flex-end;
-margin-bottom: 2rem;
+        margin-bottom: 2rem;
     }
 
     .edu-box-2 {
@@ -813,7 +818,8 @@ margin-bottom: 2rem;
             border-radius: 20px;
         }
 
-        .s-box,.s-box::before{
+        .s-box,
+        .s-box::before {
             border-radius: 25px;
         }
 
@@ -868,9 +874,10 @@ margin-bottom: 2rem;
     @media (max-width: 580px) {
         .profile-vector {
 
-    margin-bottom: -0.9rem;
+            margin-bottom: -0.9rem;
 
-}
+        }
+
         .top-left-2 {
 
             left: -141px;
