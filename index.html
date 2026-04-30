@@ -532,6 +532,44 @@
     <!-- GSAP -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="a-img/script.js"></script>
+    <script>
+// Disable right click
+document.addEventListener('contextmenu', function(e) {
+  e.preventDefault();
+});
+
+// Disable common shortcut keys
+document.addEventListener('keydown', function(e) {
+  // Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
+  if (
+    e.key === "F12" ||
+    (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J")) ||
+    (e.ctrlKey && e.key === "U")
+  ) {
+    e.preventDefault();
+  }
+});
+
+// Detect DevTools (basic detection)
+setInterval(function() {
+  const devtoolsOpen = window.outerWidth - window.innerWidth > 160 ||
+                       window.outerHeight - window.innerHeight > 160;
+
+  if (devtoolsOpen) {
+    document.body.innerHTML = "<h1 style='text-align:center;margin-top:20%;font-family:sans-serif;'>Access Denied</h1>";
+  }
+}, 1000);
+
+// Disable text selection
+document.addEventListener('selectstart', function(e) {
+  e.preventDefault();
+});
+
+// Disable drag
+document.addEventListener('dragstart', function(e) {
+  e.preventDefault();
+});
+</script>
 </body>
 
 </html>
